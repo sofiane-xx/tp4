@@ -37,12 +37,12 @@ class Noeud :
         args = [child.evaluer(valeurs) for child in self.child_nodes]
 
         # Binary operators
+        if self.node_value == "*":
+            return args[0] * args[1]
         if self.node_value == "+":
             return args[0] + args[1]
         if self.node_value == "-":
             return args[0] - args[1]
-        if self.node_value == "*":
-            return args[0] * args[1]
         if self.node_value == "/":
             if args[1] == 0:
                 raise ValueError("Division by zero")
